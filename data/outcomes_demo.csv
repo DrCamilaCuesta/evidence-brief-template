@@ -1,0 +1,5 @@
+arm,n,events,endpoint
+treatment,500,80,Primary
+control,500,110,Primary
+treatment,500,320,Secondary
+control,500,280,Secondary

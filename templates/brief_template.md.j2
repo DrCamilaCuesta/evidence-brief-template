@@ -1,0 +1,50 @@
+\
+# {{ meta.title }}
+
+**Indication:** {{ meta.indication }}  
+**Population:** {{ meta.population }}  
+**Intervention:** {{ meta.intervention }}  
+**Comparator:** {{ meta.comparator }}  
+**Version:** {{ meta.version }}  
+**Prepared by:** {{ meta.created_by }}
+
+---
+
+## Key Messages
+{% for msg in meta.key_messages %}
+- {{ msg }}
+{% endfor %}
+
+---
+
+## Efficacy/Effectiveness Endpoints
+
+{% for ep in endpoints %}
+### {{ ep }}
+
+- Risk (Treatment): {{ "%.2f"|format(effects[ep]["risk_treatment"]*100) }}%
+- Risk (Control): {{ "%.2f"|format(effects[ep]["risk_control"]*100) }}%
+- **Risk Difference (RD):** {{ "%.2f"|format(effects[ep]["rd"]*100) }}% (95% CI: {{ "%.2f"|format(effects[ep]["rd_lcl"]*100) }}% to {{ "%.2f"|format(effects[ep]["rd_ucl"]*100) }}%)
+- **Risk Ratio (RR):** {{ "%.2f"|format(effects[ep]["rr"]) }} (95% CI: {{ "%.2f"|format(effects[ep]["rr_lcl"]) }} to {{ "%.2f"|format(effects[ep]["rr_ucl"]) }})
+- **Odds Ratio (OR):** {{ "%.2f"|format(effects[ep]["or_"]) }} (95% CI: {{ "%.2f"|format(effects[ep]["or_lcl"]) }} to {{ "%.2f"|format(effects[ep]["or_ucl"]) }})
+
+{% endfor %}
+
+> Figure: Risk by arm for **{{ endpoints[0] }}**  
+> ![Risk Figure]({{ figure_path }})
+
+---
+
+## Safety
+{{ meta.safety_notes }}
+
+---
+
+## Limitations
+{% for lim in meta.limitations %}
+- {{ lim }}
+{% endfor %}
+
+---
+
+*This evidence brief was auto-generated for portfolio and educational purposes (synthetic data only).*

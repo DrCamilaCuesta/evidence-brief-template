@@ -1,0 +1,17 @@
+title: Evidence Brief — Demo Study in Hypertension
+indication: Hypertension
+population: Adults 40–80 years with stage 1–2 hypertension
+intervention: Drug X (once daily)
+comparator: Placebo
+endpoints:
+  - Primary
+  - Secondary
+safety_notes: "No serious safety signals in this simulated dataset; mild adverse events comparable across arms."
+key_messages:
+  - Drug X shows improved outcomes over placebo in the simulated cohort.
+  - Effect magnitude should be confirmed in real-world or clinical trial data.
+limitations:
+  - Synthetic data; not inferential.
+  - Simplified model; no time-to-event analysis.
+created_by: Maria Camila Cuesta
+version: 1.0
